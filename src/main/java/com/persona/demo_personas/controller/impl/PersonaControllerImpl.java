@@ -2,11 +2,8 @@ package com.persona.demo_personas.controller.impl;
 
 import com.persona.demo_personas.controller.PersonaController;
 import com.persona.demo_personas.model.Persona;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import service.PersonaService;
-
-import java.util.List;
+import com.persona.demo_personas.service.PersonaService;
 
 @RestController
 @RequestMapping("api/personas")

@@ -1,11 +1,10 @@
-package service.impl;
+package com.persona.demo_personas.service.impl;
 
 import com.persona.demo_personas.model.Persona;
 import com.persona.demo_personas.repository.PersonaRepositrory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import service.PersonaService;
+import com.persona.demo_personas.service.PersonaService;
 
 import java.util.Optional;
 

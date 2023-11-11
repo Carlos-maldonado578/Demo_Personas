@@ -1,4 +1,4 @@
-package service;
+package com.persona.demo_personas.service;
 
 import com.persona.demo_personas.model.Persona;
 import org.springframework.stereotype.Component;
