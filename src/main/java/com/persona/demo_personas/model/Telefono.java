@@ -1,11 +1,15 @@
 package com.persona.demo_personas.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "telefonos")
 public class Telefono {
@@ -18,6 +22,6 @@ public class Telefono {
     private String countrycode;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "persona_id")
     private Persona persona;
 }

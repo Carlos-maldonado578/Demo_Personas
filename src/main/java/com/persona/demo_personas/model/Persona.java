@@ -1,7 +1,9 @@
 package com.persona.demo_personas.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
@@ -10,6 +12,8 @@ import java.util.UUID;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "personas")
 public class Persona {
@@ -17,7 +21,6 @@ public class Persona {
     @Id
     @GeneratedValue
     private UUID id;
-
     private String name;
     private String email;
     private String password;
@@ -26,7 +29,6 @@ public class Persona {
     private LocalDateTime created;
     private LocalDateTime modified;
     private LocalDateTime lastLogin;
-    private String token;
     private boolean isActive;
     @PrePersist
     protected void onCreate() {
