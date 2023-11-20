@@ -4,6 +4,7 @@ import com.persona.demo_personas.Exceptions.EmailExist;
 import com.persona.demo_personas.Exceptions.LocalNotFoundException;
 import com.persona.demo_personas.Utils.Utils;
 import com.persona.demo_personas.model.Persona;
+import com.persona.demo_personas.model.Telefono;
 import com.persona.demo_personas.repository.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,11 @@ public class PersonaServiceImpl implements PersonaService {
         }
         if (verificarSiEmailExiste(persona.getEmail())){
             throw new EmailExist("Mail ya existe");
+        }
+        if (persona.getPhones() != null) {
+            for (Telefono telefono : persona.getPhones()) {
+                telefono.setPersona(persona);
+            }
         }
         return personaRepository.save(persona);
     }
