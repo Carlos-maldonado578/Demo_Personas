@@ -18,9 +18,9 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
     }
 
     @ExceptionHandler(EmailExist.class)
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ErrorMessage> emailExist(EmailExist emailExist){
-        ErrorMessage message = new ErrorMessage(HttpStatus.ACCEPTED, emailExist.getMessage());
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(message);
+        ErrorMessage message = new ErrorMessage(HttpStatus.BAD_REQUEST, emailExist.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
     }
 }
