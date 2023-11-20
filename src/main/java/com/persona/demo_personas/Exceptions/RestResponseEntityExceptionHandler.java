@@ -16,4 +16,11 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
         ErrorMessage message = new ErrorMessage(HttpStatus.NOT_FOUND, exception.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
     }
+
+    @ExceptionHandler(EmailExist.class)
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public ResponseEntity<ErrorMessage> emailExist(EmailExist emailExist){
+        ErrorMessage message = new ErrorMessage(HttpStatus.ACCEPTED, emailExist.getMessage());
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(message);
+    }
 }
